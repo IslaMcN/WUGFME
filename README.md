@@ -66,3 +66,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# Erics Dream
+## Wut U Got 4 Me?
+### Description
+
+An app that someone can enter they like and dislike to eat, what they want to drink, food pref, allergies, etc. How much work are you 
+willing to put into the dish? How much time they have? Budget?
+Eric get's an email with the information and he responds with tasty recipes. 
