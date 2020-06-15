@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import { SectionTop, Body, Header, Navigation, Tag, Main, SectionBottom, SecondHeader, Paragraph, GIF, Bold, CTA, DIV, Link, Line } from './Style/styled-components';
+import axios from 'axios';
+
 
 export const BreakfastForm = () => {
     const [data, setData] = useState(
@@ -17,12 +19,24 @@ export const BreakfastForm = () => {
         )
         console.log(data)
     };
-    const onSubmit = e =>{
+    const submitHandle = e =>{
+        e.preventDefault();
+        axios()
+            .post('/Breakfast', data)
+            .then(res => {
+                localStorage.setItem('token', res.data.payload);
+                props.history.push('/Lunch');
+            })
+            .catch( err => {
+                alert("Error! Check form for fields missed.")
+                console.log("Hey Isla, Look here:", err)
+            })
 
+        
     }
     return(
         <Body>
-            <form>
+            <form onSubmit={submitHandle}>
                 <SecondHeader>Breakfast</SecondHeader>
                 <label>Likes</label><br></br>
                 <textarea name="Likes"value={data.Likes}onChange={handlechange}></textarea><br></br>
