@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage.js";
-import { BreakfastForm, LunchForm, DinnerForm } from './components/forms.js';
+import { BreakfastForm, LunchForm, DinnerForm, NoGos } from './components/forms.js';
 
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
       <Route path="/Breakfast" component={BreakfastForm}/>
       <Route path="/Lunch" component={LunchForm}/>
       <Route path="/Dinner" component={DinnerForm}/>
+      <Route path="/NoGos" component={NoGos}/>
   </div>
     )
 }
