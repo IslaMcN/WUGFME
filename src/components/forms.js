@@ -3,7 +3,7 @@ import { SectionTop, Body, Header, Navigation, Tag, Main, SectionBottom, SecondH
 import axios from 'axios';
 
 
-export const BreakfastForm = () => {
+export const BreakfastForm = (props) => {
     const [data, setData] = useState(
         {
             Likes:'',
@@ -21,8 +21,9 @@ export const BreakfastForm = () => {
     };
     const submitHandle = e =>{
         e.preventDefault();
+        const ID = localStorage.getItem("userID");
         axios()
-            .post('/Breakfast', data)
+            .post(`http://localhost:5000/router/${ID}/breakfast`, data)
             .then(res => {
                 localStorage.setItem('token', res.data.payload);
                 props.history.push('/Lunch');
