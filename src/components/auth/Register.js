@@ -22,9 +22,10 @@ export default function Register(){
         };
 
         axios
-            .post("localhost:5000/auth/register", addUser)
+            .post("localhost:5000/auth/register", userToPost)
             .then(res => {
                 actions.resetForm();
+                console.log("Register")
             })
             .catch(err =>{
                 console.log(err)
@@ -33,6 +34,7 @@ export default function Register(){
     return(
         <div>
             {serverError}
+            <UserForm onSubmit={addUser}/>
         </div>
     )
 }
@@ -55,7 +57,7 @@ const UserForm = ({ onSubmit }) => {
             render = { props => {
                 return (
                     <div>
-                        <Navigation/>
+                        
                         <Form>
                             <h1>Register</h1>
                             <div>
