@@ -17,10 +17,11 @@ export default function Register(){
 
     const addUser = (formValues, actions) => {
         const userToPost = {
-            Email: formValues.email,
-            Password: formValues.password
+            Name: formValues.Name,
+            Email: formValues.Email,
+            Password: formValues.Password
         };
-
+        
         axios
             .post("https://wugfme.herokuapp.com/auth/register", userToPost)
             .then(res => {
