@@ -9,7 +9,7 @@ const LandingPage = () => {
         <Body>
             <Header><Link href="\">What U Got For Me Eatz</Link></Header>
             <Navigation>
-                <Tag href="">Sign In</Tag>
+                <Tag href="/Login">Sign In</Tag>
                 <Tag href="/Register">Register</Tag>
             </Navigation>
             <Main>
