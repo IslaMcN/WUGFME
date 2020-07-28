@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage.js";
 import { BreakfastForm, LunchForm, DinnerForm, NoGos } from './components/forms.js';
 import Register from './components/auth/Register';
+import Login from './components/auth/Login.js';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Route path="/Dinner" component={DinnerForm}/>
       <Route path="/NoGos" component={NoGos}/>
       <Route path="/Register" component={Register}/>
+      <Route path="/Login" component={Login}/>
   </div>
     )
 }
