@@ -24,6 +24,7 @@ export default function Register(){
         
         axios
             .post("https://wugfme.herokuapp.com/auth/register", userToPost)
+            //.post("http://localhost:5000/auth/register", userToPost)
             .then(res => {
                 actions.resetForm();
                 console.log("Register")
