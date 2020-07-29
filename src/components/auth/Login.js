@@ -7,8 +7,8 @@ import styled from 'styled-components';
 class Login extends React.Component{
     state={
         credentials: {
-            email: '',
-            password: ''
+            Email: '',
+            Password: ''
         }
     };
     handleChange = e => {
@@ -23,11 +23,13 @@ class Login extends React.Component{
         e.preventDefault();
         axios
             .post('https://wugfme.herokuapp.com/auth/login', this.state.credentials)
+            //.post('http://localhost:5000/auth/login', this.state.credentials)
             .then( res => {
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('userID', res.data.user);
                 this.props.history.push('/Dashboard');
             })
+            .catch(err => console.log(err))
     }
     render(){
         return(
@@ -39,13 +41,13 @@ class Login extends React.Component{
                     </p>
                     <input 
                         type="email"
-                        name="email"
+                        name="Email"
                         placeholder="Email"
                         value={this.state.credentials.name}
                         onChange={this.handleChange}/>
                     <input
                         type="password"
-                        name="password"
+                        name="Password"
                         value={this.state.credentials.password}
                         onChange={this.handleChange}
                         placeholder="Password"/>
