@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import history from '../history.js';
 
 class Dashboard extends Component {
-    constructor(){
+    constructor(props){
         super();
         this.state = {
-            Name: ""
+            Name: this.props.Name
         }
     }
     createNewOrder = e => {
