@@ -1,16 +1,21 @@
-import React from 'react';
+import React, {Component} from 'react';
+import history from '../history.js';
 
-class Dashboard extends React.Component() {
+class Dashboard extends Component {
     constructor(){
         super();
         this.state = {
             Name: ""
         }
     }
+    createNewOrder = e => {
+        history.push('/Breakfast');
+        window.location.reload(true)
+    }
     render(){
     return(
         <div>
-            {/* <h2>Welcome ${name}</h2> */}
+            <h2>Welcome {this.state.Name}</h2>
             <section>
                 <h3>Status of Current Order</h3>
                 {/* <p>${message}</p> */}
@@ -18,7 +23,7 @@ class Dashboard extends React.Component() {
                 <button>Edit Order</button>
             </section>
             <section>
-                <button>Create New Order</button>
+                <button onClick={this.createNewOrder}>Create New Order</button>
             </section>
 
         </div>
