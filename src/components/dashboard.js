@@ -1,21 +1,24 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect} from 'react';
 import history from '../history.js';
+import {connect} from 'react-redux';
+import {getUsers} from '../actions';
 
-class Dashboard extends Component {
-    constructor(props){
-        super();
-        this.state = {
-            Name: this.props.Name
-        }
+const Dashboard = ({getUsers, value, isFetching, error}) => {
+    useEffect(() => {
+        getUsers();
+    },[]);
+    if(isFetching){
+        return(<div>Loading. . .</div>)
     }
-    createNewOrder = e => {
+    
+    const createNewOrder = e => {
         history.push('/Breakfast');
         window.location.reload(true)
     }
-    render(){
+    
     return(
         <div>
-            <h2>Welcome {this.state.Name}</h2>
+            <h2>Welcome {value}</h2>
             <section>
                 <h3>Status of Current Order</h3>
                 {/* <p>${message}</p> */}
@@ -23,11 +26,19 @@ class Dashboard extends Component {
                 <button>Edit Order</button>
             </section>
             <section>
-                <button onClick={this.createNewOrder}>Create New Order</button>
+                <button onClick={createNewOrder}>Create New Order</button>
             </section>
 
         </div>
-    )}
+    )
 }
 
-export default Dashboard;
+const mapStateToProps = state => {
+    return{
+        value: state.value,
+        isFetching: state.isFetching,
+        error: state.error
+    }
+}
+
+export default connect(mapStateToProps, {getUsers})(Dashboard);
