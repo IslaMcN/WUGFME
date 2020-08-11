@@ -1,11 +1,11 @@
 import React, {Component, useEffect} from 'react';
 import history from '../history.js';
 import {connect} from 'react-redux';
-import {getUsers} from '../actions';
+import {getUser} from '../actions';
 
-const Dashboard = ({getUsers, value, isFetching, error}) => {
+const Dashboard = ({getUser, value, isFetching, error}) => {
     useEffect(() => {
-        getUsers();
+        getUser();
     },[]);
     if(isFetching){
         return(<div>Loading. . .</div>)
@@ -41,4 +41,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {getUsers})(Dashboard);
+export default connect(mapStateToProps, {getUser})(Dashboard);

@@ -4,9 +4,9 @@ export const START = "START";
 export const SUCCESS = "SUCCESS";
 export const FAIL = "FAIL";
 
-export const getUser = () => {
+export const getUser = () => dispatch => {
     dispatch({type: START});
-    axios.get('user api')
+    axios.get(`http://localhost:5000/router/:id`)
         .then(res => {
             dispatch({type: SUCCESS, payload: res.data.value});
         })
