@@ -1,15 +1,11 @@
-import React, {Component, useEffect} from 'react';
+import React, {useContext} from 'react';
 import history from '../history.js';
-import {connect} from 'react-redux';
-import {getUser} from '../actions';
+import DashboardContext from '../contexts/DashboardContext.js'
 
-const Dashboard = ({getUser, value, isFetching, error}) => {
-    useEffect(() => {
-        getUser();
-    },[]);
-    if(isFetching){
-        return(<div>Loading. . .</div>)
-    }
+const {dash} = useContext(DashboardContext);
+
+
+const Dashboard = () => {
     
     const createNewOrder = e => {
         history.push('/Breakfast');
@@ -18,7 +14,9 @@ const Dashboard = ({getUser, value, isFetching, error}) => {
     
     return(
         <div>
-            <h2>Welcome {value}</h2>
+            <h2>Welcome {dash.map(item =>{
+                console.log(item)
+            })}</h2>
             <section>
                 <h3>Status of Current Order</h3>
                 {/* <p>${message}</p> */}
@@ -41,4 +39,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {getUser})(Dashboard);
+export default(Dashboard);
