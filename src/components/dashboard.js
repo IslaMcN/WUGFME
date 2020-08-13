@@ -2,11 +2,12 @@ import React, {useContext} from 'react';
 import history from '../history.js';
 import DashboardContext from '../contexts/DashboardContext.js'
 
-const {dash} = useContext(DashboardContext);
+
 
 
 const Dashboard = () => {
-    
+    const {dash} = useContext(DashboardContext);
+    console.log('dash:',dash)
     const createNewOrder = e => {
         history.push('/Breakfast');
         window.location.reload(true)
