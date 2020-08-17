@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import LandingPage from "./components/LandingPage.js";
 import { BreakfastForm, LunchForm, DinnerForm, NoGos } from './components/forms.js';
 import Register from './components/auth/Register';
@@ -14,6 +14,7 @@ function App() {
   const [dashboard] = useState(UserTest)
   return(
   <DashboardContext.Provider value={{dashboard}}>
+    <Switch>
       <Route exact path="/" component={LandingPage}/>
       <Route path="/Breakfast" component={BreakfastForm}/>
       <Route path="/Lunch" component={LunchForm}/>
@@ -22,6 +23,7 @@ function App() {
       <Route path="/Register" component={Register}/>
       <Route path="/Login" component={Login}/>
       <PrivateRoute path="/Dashboard" component={Dashboard}/>
+      </Switch>
   </DashboardContext.Provider>
     )
 }

@@ -14,7 +14,7 @@ const Dashboard = () => {
     }
     
     return(
-        <div>
+        <DashboardContext.Consumer>
             <h2>Welcome {dash.map(item =>{
                 console.log(item)
             })}</h2>
@@ -28,7 +28,7 @@ const Dashboard = () => {
                 <button onClick={createNewOrder}>Create New Order</button>
             </section>
 
-        </div>
+        </DashboardContext.Consumer>
     )
 }
 

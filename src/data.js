@@ -12,8 +12,8 @@
 //     )
 // }
 
-export const UserTest = {
+export const UserTest = [{
     'id': 1,
     'Name': 'Arya',
     'Email': 'stinky@baby.com'
-}
+}]
