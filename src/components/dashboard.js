@@ -6,7 +6,7 @@ import DashboardContext from '../contexts/DashboardContext.js'
 
 
 const Dashboard = () => {
-    const {dash} = useContext(DashboardContext);
+    const {dash} = useContext(DashboardContext)
     console.log('dash:',dash)
     const createNewOrder = e => {
         history.push('/Breakfast');
@@ -15,19 +15,23 @@ const Dashboard = () => {
     
     return(
         <DashboardContext.Consumer>
-            <h2>Welcome {dash.map(item =>{
-                console.log(item)
-            })}</h2>
+            {value =>{
+                console.log()
+                return(
+                <>
+            <h2>Welcome {value.dashboard[0].Name}
+            </h2>
             <section>
                 <h3>Status of Current Order</h3>
-                {/* <p>${message}</p> */}
+               
                 <button>Cancel Order</button>
                 <button>Edit Order</button>
             </section>
             <section>
                 <button onClick={createNewOrder}>Create New Order</button>
             </section>
-
+            </>)
+}}
         </DashboardContext.Consumer>
     )
 }
