@@ -1,5 +1,10 @@
 import React, {createContext} from 'react';
 import{ UserTest }from '../data';
+
+function GetUser(){
+
+}
+
 const DashboardContext = createContext({
     Name: UserTest.Name
 });
