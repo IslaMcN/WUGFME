@@ -1,13 +1,11 @@
 import React, {createContext} from 'react';
-import{ UserTest }from '../data';
+import{ Data }from '../data';
 
 function GetUser(){
 
 }
 
-const DashboardContext = createContext({
-    Name: UserTest.Name
-});
-console.log('Dashboard Context:', DashboardContext._currentValue)
+const DashboardContext = createContext(Data);
+console.log('Dashboard Context:', DashboardContext)
 
 export default DashboardContext;

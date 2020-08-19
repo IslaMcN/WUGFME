@@ -16,10 +16,10 @@ const Dashboard = () => {
     return(
         <DashboardContext.Consumer>
             {value =>{
-                console.log()
+                console.log("value",value.dashboard)
                 return(
                 <>
-            <h2>Welcome {value.dashboard[0].Name}
+            <h2>Welcome {value.dashboard[0]}
             </h2>
             <section>
                 <h3>Status of Current Order</h3>
@@ -36,12 +36,6 @@ const Dashboard = () => {
     )
 }
 
-const mapStateToProps = state => {
-    return{
-        value: state.value,
-        isFetching: state.isFetching,
-        error: state.error
-    }
-}
 
+ 
 export default(Dashboard);

@@ -7,11 +7,12 @@ import Login from './components/auth/Login.js';
 import PrivateRoute from './components/auth/PrivateRoute'
 import Dashboard from './components/dashboard'
 import DashboardContext from './contexts/DashboardContext.js';
-import {UserTest} from './data.js';
+import {Data} from './data.js';
 
 
 function App() {
-  const [dashboard] = useState(UserTest)
+  const [dashboard] = useState(Data)
+  console.log(dashboard)
   return(
   <DashboardContext.Provider value={{dashboard}}>
     <Switch>
