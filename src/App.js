@@ -11,7 +11,7 @@ import {Data} from './data.js';
 
 
 function App() {
-  const [dashboard] = useState(Data)
+  const [dashboard] = useState(Data(1))
   console.log(dashboard)
   return(
   <DashboardContext.Provider value={{dashboard}}>

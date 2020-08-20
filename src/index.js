@@ -9,7 +9,7 @@ import history from './history.js';
 
 const AppWithRouter = withRouter(App);
 
-
+console.log('App', AppWithRouter)
 ReactDOM.render(
   <Router history={history}>
     <AppWithRouter/>
