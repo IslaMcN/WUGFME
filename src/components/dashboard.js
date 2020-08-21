@@ -5,12 +5,12 @@ import DashboardContext from '../contexts/DashboardContext.js'
 
 
 
-const  Dashboard = async () => {
+const  Dashboard =  () => {
     //const {dash} = useContext(DashboardContext)
     //console.log('dash:',dash)
     console.log('here')
     const createNewOrder = e => {
-        history.push('/Breakfast');
+        //history.push('/Breakfast');
         window.location.reload(true)
     }
     return(
@@ -20,7 +20,7 @@ const  Dashboard = async () => {
                  console.log("value",value.dashboard)
                 return(
                 <>
-            <h2>Welcome {value.dashboard[0]}
+            <h2>Welcome {value.dashboard}
             </h2>
             <section>
                 <h3>Status of Current Order</h3>

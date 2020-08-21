@@ -11,7 +11,7 @@ const AppWithRouter = withRouter(App);
 
 console.log('App', AppWithRouter)
 ReactDOM.render(
-  <Router history={history}>
+  <Router >
     <AppWithRouter/>
   </Router>,
   document.getElementById('root')
